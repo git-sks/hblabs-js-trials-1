@@ -2,19 +2,45 @@
 
 
 def output_all_items(items):
-    pass  # TODO: replace this line with your code
+    """Print out every item in a list of items."""
+
+    for item in items:
+        print(item)
 
 
 def get_all_evens(nums):
-    pass  # TODO: replace this line with your code
+    """Given a list of numbers, return a list of all even numbers."""
+
+    even_nums = []
+
+    for num in nums:
+        if num % 2 == 0:
+            even_nums.append(num)
+
+    return even_nums
 
 
 def get_odd_indices(items):
-    pass  # TODO: replace this line with your code
+    """Given a list, return all items at odd-numbered indices."""
+
+    result = []
+
+    for idx in range(len(items)):
+        if not idx % 2 == 0:
+            result.append(items[idx])
+
+    return result 
 
 
 def print_as_numbered_list(items):
-    pass  # TODO: replace this line with your code
+    """Given a list, print a numbered list of the items."""
+
+    i = 1
+
+    for item in items:
+        print(f'{i}. {item}')
+
+        i += 1
 
 
 def get_range(start, stop):
