@@ -69,20 +69,79 @@ def censor_vowels(word):
 
 
 def snake_to_camel(string):
-    pass  # TODO: replace this line with your code
+    """Given a string in snake case, return a string in upper camel case."""
+
+    camelCase = []
+
+    for word in string.split('_'):
+        camelCase.append(f'{word[0].upper()}{word[1:]}')
+
+    return ''.join(camelCase)
 
 
 def longest_word_length(words):
-    pass  # TODO: replace this line with your code
+    """Return the length of the longest word in a given list of words."""
+
+    longest = len(words[0])
+
+    for word in words:
+        if longest < len(word):
+            longest = len(word)
+
+    return longest
 
 
 def truncate(string):
-    pass  # TODO: replace this line with your code
+    """Truncate repeating characters into one character."""
+
+    result = []
+
+    for char in string:
+        if len(result) == 0 or not char == result[len(result) - 1]:
+            result.append(char)
+
+    return ''.join(result)
 
 
 def has_balanced_parens(string):
-    pass  # TODO: replace this line with your code
+    """Return true if all parentheses in a given string are balanced."""
+
+    parens = 0
+
+    for char in string:
+        if char == '(':
+            parens += 1
+        elif char == ')':
+            parens -= 1
+
+            if parens < 0:
+                return False
+
+    return parens == 0
 
 
 def compress(string):
-    pass  # TODO: replace this line with your code
+    """Return the compressed version of a given string."""
+
+    compressed = []
+
+    currChar = ''
+    charCount = 0
+
+    for char in string:
+        if not char == currChar:
+            compressed.append(currChar)
+
+            if charCount > 1:
+                compressed.append(str(charCount))
+
+            currChar = char
+            charCount = 0
+
+        charCount += 1
+
+    compressed.append(currChar)
+    if charCount > 1:
+        compressed.append(str(charCount))
+
+    return ''.join(compressed)
