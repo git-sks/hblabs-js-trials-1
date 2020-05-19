@@ -44,11 +44,28 @@ def print_as_numbered_list(items):
 
 
 def get_range(start, stop):
-    pass  # TODO: replace this line with your code
+    """Return a list of numbers in a given range."""
+
+    nums = []
+
+    for num in range(start, stop):
+        nums.append(num)
+
+    return nums
 
 
 def censor_vowels(word):
-    pass  # TODO: replace this line with your code
+    """Given a string, return a string where vowels are replaced with '*'."""
+
+    chars = []
+
+    for letter in word:
+        if letter in 'aeiou':
+            chars.append('*')
+        else:
+            chars.append(letter)
+
+    return ''.join(chars)
 
 
 def snake_to_camel(string):
